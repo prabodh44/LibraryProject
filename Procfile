@@ -1,1 +1,1 @@
-web:gunicorn LMS.wsgi
+web:gunicorn library.wsgi
