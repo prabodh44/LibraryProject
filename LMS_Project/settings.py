@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from decouple import config
+# from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'library',
+    'scripts',
 ]
 
 MIDDLEWARE = [
@@ -75,14 +75,21 @@ WSGI_APPLICATION = 'LMS_Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': config('DB_PORT'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -127,3 +134,5 @@ STATIC_URL = '/static/'
 
 # Display root URL after login
 LOGIN_REDIRECT_URL = '/'
+
+# some new changes

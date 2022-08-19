@@ -175,7 +175,7 @@ def deleteStudent_view(request, student_id):
         print("User doesnot exist")
     return redirect('students')
 
-
+# hello umesh sir
 def login_view(request):
     if request.method == "POST":
         username = request.POST.get('username')
